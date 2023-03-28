@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  db:
+    build: ./docker
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: username
+      POSTGRES_DB: database
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
